@@ -1,0 +1,55 @@
+{
+  "id": "115053de-abe1-4073-b957-99213599e8a4",
+  "meta": {
+    "name": "emotion-fer-plus",
+    "application_area": "Computer Vision",
+    "task": "Recognition",
+    "task_extended": "Facial Expression Recognition",
+    "data_type": "Image/Photo",
+    "data_source": "https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge/data"
+  },
+  "publication": {
+    "title": "Training Deep Networks for Facial Expression Recognition with Crowd-Sourced Label Distribution",
+    "source": "arXiv",
+    "year": 2016,
+    "authors": "Emad Barsoum, Cha Zhang, Cristian C. Ferrer, Zhengyou Zhang",
+    "email": "ebarsoum@microsoft.com",
+    "abstract": "Crowd sourcing has become a widely adopted scheme to collect ground truth labels. However, it is a well-known problem that these labels can be very noisy. In this paper, we demonstrate how to learn a deep convolutional neural network (DCNN) from noisy labels, using facial expression recognition as an example. More specifically, we have 10 taggers to label each input image, and compare four different approaches to utilizing the multiple labels: majority voting, multi-label learning, probabilistic label drawing, and cross-entropy loss. We show that the traditional majority voting scheme does not perform as well as the last two approaches that fully leverage the label distribution. An enhanced FER+ data set with multiple labels for each face image will also be shared with the research community.",
+    "url": "https://arxiv.org/abs/1608.01041",
+    "google_scholar": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=7940149569384948015&as_sdt=5",
+    "bibtex": "@article{DBLP:journals/corr/BarsoumZCZ16, author    = {Emad Barsoum and Cha Zhang and Cristian Canton{-}Ferrer and Zhengyou Zhang}, title = {Training Deep Networks for Facial Expression Recognition with Crowd-Sourced Label Distribution}, journal = {CoRR}, volume = {abs/1608.01041}, year = {2016}, url = {http://arxiv.org/abs/1608.01041}, archivePrefix = {arXiv}, eprint = {1608.01041}, timestamp = {Mon, 13 Aug 2018 16:46:07 +0200}, biburl = {https://dblp.org/rec/bib/journals/corr/BarsoumZCZ16}, bibsource = {dblp computer science bibliography, https://dblp.org}}"
+  },
+  "model": {
+    "description": "emotion-fer-plus is a deep convolutional neural network for emotion recognition in faces. It is trained on the FER+ dataset. The FER+ annotations provide a set of new labels for the standard Emotion FER dataset. In FER+, each image has been labeled by 10 crowd-sourced taggers, which provide better quality ground truth for still image emotion than the original FER labels. Having 10 taggers for each image enables researchers to estimate an emotion probability distribution per face. This allows constructing algorithms that produce statistical distributions or multi-label outputs instead of the conventional single-label output.",
+    "learning_type": "Supervised learning",
+    "format": ".onnx",
+    "io": {
+      "input": {
+        "format": ["image/png", "image/jpg", "image/jpeg"],
+        "dim_limits": [
+          {
+            "min": 1,
+            "max": 4
+          },
+          {
+            "min": 32
+          },
+          {
+            "min": 32
+          }
+        ]
+      },
+      "output": [
+        {
+          "name": "emotion probabilities",
+          "type": "label_list",
+          "description": "Probabilities of the 8 facial expression classes."
+        }
+      ]
+    }
+  },
+  "modelhub": {
+    "top": 8,
+    "sort": true
+  }
+}
