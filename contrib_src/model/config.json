@@ -21,6 +21,7 @@
   },
   "model": {
     "description": "emotion-fer-plus is a deep convolutional neural network for emotion recognition in faces. It is trained on the FER+ dataset. The FER+ annotations provide a set of new labels for the standard Emotion FER dataset. In FER+, each image has been labeled by 10 crowd-sourced taggers, which provide better quality ground truth for still image emotion than the original FER labels. Having 10 taggers for each image enables researchers to estimate an emotion probability distribution per face. This allows constructing algorithms that produce statistical distributions or multi-label outputs instead of the conventional single-label output.",
+    "architecture": "Convolutional Neural Network (CNN)",
     "learning_type": "Supervised learning",
     "format": ".onnx",
     "io": {
